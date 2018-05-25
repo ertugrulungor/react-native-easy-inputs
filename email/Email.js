@@ -21,11 +21,12 @@ class EmailInput extends React.Component {
     }
 
     validateEmail(email) {
+        this.setState({ email: email });
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (re.test(String(email).toLowerCase())) {
-            this.setState({ isValid: false });
-        } else {
             this.setState({ isValid: true });
+        } else {
+            this.setState({ isValid: false });
         }
     }
 
@@ -36,10 +37,13 @@ class EmailInput extends React.Component {
             errorMessage,
             containerStyle,
             onChangeText,
+            onChange,
             ...attributes
         } = this.props;
         return (
-            <View style={[styles.container, containerStyle]}>
+            <View
+                style={[styles.container, containerStyle]}
+                onChange={this.props.onChange(this.state.isValid)}>
                 <TextInput
                     {...attributes}
                     keyboardType={'email-address'}
@@ -47,7 +51,7 @@ class EmailInput extends React.Component {
                     underlineColorAndroid="transparent"
                     style={[styles.input, inputStyle]}
                     onChangeText={(text) => this.validateEmail(text)} />
-                {this.state.isValid && <Text style={[styles.error, errorStyle]}>
+                {!this.state.isValid && <Text style={[styles.error, errorStyle]}>
                     {errorMessage}
                 </Text>}
             </View>
