@@ -30,12 +30,28 @@ class EmailInput extends React.Component {
         }
     }
 
+    validateProvider(email) {
+        if (typeof this.props.provider != 'undefined') {
+            var arr = email.split('@');
+            if (arr[1] != null) {
+                if (this.props.provider != null && arr[1] === this.props.provider) {
+                    this.setState({ isValid: true });
+                } else {
+                    this.setState({ isValid: false });
+                }
+            } else {
+                this.setState({ isValid: false });
+            }
+        }
+    }
+
     render() {
         const {
             inputStyle,
             errorStyle,
             errorMessage,
             containerStyle,
+            provider,
             onChangeText,
             onChange,
             ...attributes
@@ -50,7 +66,10 @@ class EmailInput extends React.Component {
                     placeholder={attributes.placeholder}
                     underlineColorAndroid="transparent"
                     style={[styles.input, inputStyle]}
-                    onChangeText={(text) => this.validateEmail(text)} />
+                    onChangeText={(text) => {
+                        this.validateEmail(text);
+                        this.validateProvider(text);
+                    }} />
                 {!this.state.isValid && <Text style={[styles.error, errorStyle]}>
                     {errorMessage}
                 </Text>}
@@ -89,6 +108,8 @@ EmailInput.propTypes = {
 
     errorStyle: Text.propTypes.style,
     errorMessage: PropTypes.string,
+
+    provider: PropTypes.string
 };
 
 export default EmailInput;

@@ -9,18 +9,20 @@ Input components for React Native app
 
 ### Usage
 
-Basic use is as follows
+Basic usage is as follows
 
 ```js
 import { EmailInput } from 'react-native-easy-inputs';
 
-<EmailInput 
-	errorMessage={"wrong format"}
-	placeholder={"type here.."}
-	onChange={(data) => {
-		console.log(data);
-	}}
-/>;
+<EmailInput
+    errorMessage={"asdas"}
+    placeholder={"dsds"}
+    provider={"gmail.com"}
+    errorStyle={{ fontSize: 12 }}
+    inputStyle={{ backgroundColor: '#fff' }}
+    onChange={(data) => {
+        console.log(data);
+    }}/>
 ```
 
 ## TODO
