@@ -27,7 +27,7 @@ import { EmailInput } from 'react-native-easy-inputs';
 
 ## TODO
 * [x] Email Input
-* [ ] Password Input
+* [x] Password Input
 * [ ] Money Input 
 * [ ] Telephone Input
 * [ ] Ip Adress Input

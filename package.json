@@ -1,28 +1,31 @@
 {
-    "name": "react-native-easy-inputs",
-    "version": "0.0.2",
-    "description": "Input components for React Native app",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/ertugrulungor/react-native-easy-inputs.git"
-    },
-    "keywords": [
-      "react-native",
-      "easy",
-      "input",
-      "inputs"
-    ],
-    "author": "ERTUĞRUL ÜNGÖR <ertugrulungor@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/ertugrulungor/react-native-easy-inputs/issues"
-    },
-    "homepage": "https://github.com/ertugrulungor/react-native-easy-inputs#readme",
-    "peerDependencies": {
-      "react-native": ">=0.40.0"
-    }
+  "name": "react-native-easy-inputs",
+  "version": "0.0.3",
+  "description": "Input components for React Native app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ertugrulungor/react-native-easy-inputs.git"
+  },
+  "keywords": [
+    "react-native",
+    "easy",
+    "input",
+    "inputs"
+  ],
+  "author": "ERTUĞRUL ÜNGÖR <ertugrulungor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ertugrulungor/react-native-easy-inputs/issues"
+  },
+  "homepage": "https://github.com/ertugrulungor/react-native-easy-inputs#readme",
+  "peerDependencies": {
+    "react-native": ">=0.40.0"
+  },
+  "dependencies": {
+    "react-native-progress-bar-animated": "^1.0.6"
   }
+}
