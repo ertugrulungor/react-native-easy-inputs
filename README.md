@@ -7,22 +7,34 @@ Input components for React Native app
 
 > npm install react-native-easy-inputs
 
-### Usage
+##  Components
 
-Basic usage is as follows
-
+### Email Input
 ```js
 import { EmailInput } from 'react-native-easy-inputs';
 
-<EmailInput
-    errorMessage={"asdas"}
-    placeholder={"dsds"}
-    provider={"gmail.com"}
-    errorStyle={{ fontSize: 12 }}
-    inputStyle={{ backgroundColor: '#fff' }}
-    onChange={(data) => {
-        console.log(data);
-    }}/>
+<EmailInput 
+	errorMessage={"wrong format"}
+	placeholder={"type here.."}
+	onChange={(data) => {
+		console.log(data); //true, false
+	}}
+/>;
+```
+
+### Password Input
+
+```js
+import { PasswordInput } from 'react-native-easy-inputs';
+
+<PasswordInput
+	placeholder={"type here.."}
+	errorStyle={{ fontSize:  12 }}
+	inputStyle={{ backgroundColor:  '#fff' }}
+	onChange={(data) => {
+		console.log(data); //[0..100]
+	}}
+/>
 ```
 
 ## TODO
